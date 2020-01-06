@@ -10,6 +10,31 @@
   </head>
 
   <body>
+    <div class="row">
+        <nav class="navbar navbar-default">
+          <ul class="nav navbar-nav">
+            <li><a>Link 1</a></li>
+            <li><a>Link 2</a></li>
+            <li><a>Link 3</a></li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0 navbar-right navbar-form">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </nav>
+    </div>
+    <div class="jumbotron">
+      <h1 class="text-center">Blog Template</h1>
+    </div>
+    <div class="jumbotron">
+      <%= image_tag 'blog.jpg', :class => "jumbo_img" %>
+    </div>
+    <ul class="nav nav-tabs nav-justified">
+      <li class="active"><a href="#">Home</a></li>
+      <li><a href="#">Menu 1</a></li>
+      <li><a href="#">Menu 2</a></li>
+      <li><a href="#">Menu 3</a></li>
+    </ul>
     <div class="container">
       <%= yield %>
     </div>

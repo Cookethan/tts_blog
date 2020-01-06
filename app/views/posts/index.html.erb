@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<!-- <p id="notice"><%= notice %></p>
 
 <h1>Posts</h1>
 
@@ -14,18 +14,41 @@
 
   <tbody>
     <% @posts.each do |post| %>
+    <div class="card" style="width: 18rem;">
       <tr>
-        <td><%= post.title %></td>
+        <td class="card-title"> <%= post.title %></td>
         <td><%= post.author %></td>
-        <td><%= post.blog_entry %></td>
-        <td><%= link_to 'Show', post %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td class="card-text"><%= post.blog_entry %></td>
+        <td><%= link_to 'Show', post,  class: "btn btn-primary" %></td>
+        <td><%= link_to 'Edit', edit_post_path(post), class: "btn btn-primary" %></td>
+        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-primary" %></td>
       </tr>
+    </div>
     <% end %>
   </tbody>
 </table>
 
-<br>
+<br> -->
+
+<% @posts.each do |post| %>
+  <div class="card col-sm-11">
+    <div class="card-title">
+      <h3><%= post.title %></h3>
+    </div>
+    <div class="card-body">
+      <h4 class="card-subtitle"><%= post.author %></h4>
+      <p class="card-text" style="height: 200px; overflow: scroll;"><%= post.blog_entry %></p>
+    </div>
+    <div class="card-footer">
+      <div class="btn-group">
+        <button type="button" class="post_btn"><%= link_to 'Show', post,  class: "btn btn-default" %></button>
+        <button type="button" class="post_btn"><%= link_to 'Edit', edit_post_path(post), class: "btn btn-primary" %></button>
+        <button type="button" class="post_btn"><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></button>
+      </div>
+    </div>
+  </div>
+
+<% end %>
+
 
 <%= link_to 'New Post', new_post_path %>
