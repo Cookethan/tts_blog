@@ -29,21 +29,22 @@
     <div class="jumbotron">
       <%= image_tag 'blog.jpg', :class => "jumbo_img" %>
     </div>
-    <ul class="nav nav-tabs nav-justified">
+    <!--<ul class="nav nav-tabs nav-justified">
       <li class="active"><a href="#">Home</a></li>
       <li><a href="#">Menu 1</a></li>
       <li><a href="#">Menu 2</a></li>
       <li><a href="#">Menu 3</a></li>
-    </ul>
+    </ul> -->
     <div class="pull-right">
       <% if user_signed_in? %>
-      <%= image_tag current_user.avatar.url, :class => "profile_img"%>
+      <%= image_tag current_user.avatar.url, :class => "profile_img" %>
       <%= link_to "Edit Profile", edit_user_registration_path, class: "btn btn-primary" %> 
       <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "btn btn-danger" %>
       <% end %>
     </div>
     <div class="container">
       <%= yield %>
+      <br >
     </div>
   </body>
 </html>

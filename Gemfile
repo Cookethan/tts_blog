@@ -39,7 +39,12 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 # Use Devise for Authentication
-gem 'devise'
+gem 'devise' 
+
+# Use Kaminari for Pagination
+gem 'kaminari'
+gem 'bootstrap4-kaminari-views'
+gem 'bootstrap_form'
 
 # File Uploader
 gem 'carrierwave', '~> 1.0'
